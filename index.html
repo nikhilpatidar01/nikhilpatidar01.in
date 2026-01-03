@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nikhil Patidar – Cybersecurity Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+</head>
+<body class="no-fouc">
+    <header id="main-header">
+        <nav class="navbar">
+            <div class="container navbar-container">
+                <a href="#home" class="logo">nikhilpatidar01.in</a>
+                
+                <!-- Desktop Menu -->
+                <div class="nav-menu-desktop">
+                    <ul class="nav-links">
+                        <li><a href="#home" class="nav-link">Home</a></li>
+                        <li><a href="#about" class="nav-link">About</a></li>
+                        <li><a href="#skills" class="nav-link">Skills</a></li>
+                        <li><a href="#projects" class="nav-link">Projects</a></li>
+                        <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                        <li><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Hamburger Icon -->
+                <div class="hamburger-menu" id="hamburger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu Modal Overlay -->
+        <div class="mobile-menu-overlay" id="mobile-menu-overlay">
+            <div class="mobile-menu-box">
+                <ul class="mobile-nav-links">
+                    <li><a href="#home" class="mobile-nav-link">Home</a></li>
+                    <li><a href="#about" class="mobile-nav-link">About</a></li>
+                    <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+                    <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+                    <li><a href="#certifications" class="mobile-nav-link">Certifications</a></li>
+                    <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-grid-container"> <!-- New container for 2-column layout -->
+                    <div class="profile-photo-wrapper">
+                        <div class="profile-photo-border"></div>
+                        <img src="assets/images/Profile.png" alt="Nikhil Patidar" class="profile-photo">
+                    </div>
+                    <div class="hero-identity-column">
+                        <h1 class="hero-name">Nikhil Patidar</h1>
+                        <p class="hero-title"></p>
+                        <p class="hero-intro">
+                            Penetration Tester focused on real-world web application and network security.
+                            I actively hunt vulnerabilities through CTFs, hands-on labs, and bug bounty programs,
+                            with experience discovering and responsibly disclosing security flaws including CVEs.
+                            My goal is to help organizations find and fix security gaps before attackers exploit them.
+                        </p>
+                        <div class="social-uiverse">
+                            <div class="parent">
+                                <a href="https://www.linkedin.com/in/nikhilpatidar01" target="_blank" rel="noopener noreferrer" class="child" aria-label="LinkedIn">
+                                    <i class="fab fa-linkedin-in"></i>
+                                    <span class="tooltip">LinkedIn</span>
+                                </a>
+                            </div>
+                            <div class="parent">
+                                <a href="https://github.com/nikhilpatidar01" target="_blank" rel="noopener noreferrer" class="child" aria-label="GitHub">
+                                    <i class="fab fa-github"></i>
+                                    <span class="tooltip">GitHub</span>
+                                </a>
+                            </div>
+                            <div class="parent">
+                                <a href="https://youtube.com/@nikhilpatidar01" target="_blank" rel="noopener noreferrer" class="child" aria-label="YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                    <span class="tooltip">YouTube</span>
+                                </a>
+                            </div>
+                            <div class="parent">
+                                <a href="https://medium.com/@nikhilpatidar01" target="_blank" rel="noopener noreferrer" class="child" aria-label="Medium">
+                                    <i class="fab fa-medium-m"></i>
+                                    <span class="tooltip">Medium</span>
+                                </a>
+                            </div>
+                            <div class="parent">
+                                <a href="https://instagram.com/nikhilpatidar01" target="_blank" rel="noopener noreferrer" class="child" aria-label="Instagram">
+                                    <i class="fab fa-instagram"></i>
+                                    <span class="tooltip">Instagram</span>
+                                </a>
+                            </div>
+                            <div class="parent">
+                                <a href="https://twitter.com/nikhilpatidar01" target="_blank" rel="noopener noreferrer" class="child" aria-label="Twitter">
+                                    <i class="fab fa-twitter"></i>
+                                    <span class="tooltip">Twitter</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content two-column-layout">
+                    <div>
+                        <p>
+                            I’m Nikhil Patidar, a penetration tester focused on finding and exploiting real-world vulnerabilities in web applications and networks. I work with CTFs, labs, and bug bounty style testing to identify security flaws before attackers do.
+                        </p>
+                        <p>
+                            I have hands-on experience in web exploitation, Linux systems, and security testing workflows, and I actively participate in CTFs and security research, including CVE-level vulnerability discovery.
+                        </p>
+                    </div>
+                    <div class="hero-summary-column">
+                        <h2 class="section-title sr-only">Stats</h2>
+                        <div class="cyber-stats-line">
+                            <span class="cyber-stat">
+                                <span class="cyber-stat-value cyber-neon-blue" data-target="300" data-suffix="+">0</span>
+                                <span class="cyber-stat-text"> Labs Completed</span>
+                            </span>
+                            <span class="cyber-stat-separator"> | </span>
+                            <span class="cyber-stat">
+                                <span class="cyber-stat-value cyber-neon-green" data-target="10" data-suffix="+">0</span>
+                                <span class="cyber-stat-text"> CTFs Played</span>
+                            </span>
+                            <span class="cyber-stat-separator"> | </span>
+                            <span class="cyber-stat">
+                                <span class="cyber-stat-value cyber-neon-gold" data-target="1" data-suffix="">0</span>
+                                <span class="cyber-stat-text"> CVE Published</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section">
+            <div class="container">
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                                                                                                                            <h3>Core Skills</h3>
+                                                                                                                            <div id="core-skills-carousel-container">
+                                                                                                                                <!-- Carousel will be loaded here by JavaScript -->
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                        <div class="skill-category">                        <h3>Tools</h3>
+                        <div id="tools-container" class="tool-list grid-layout">
+                            <!-- Tools will be loaded here by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects & Achievements Section -->
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <h2 class="section-title">Projects & Achievements</h2>
+                <div class="projects-grid-container">
+                    <div class="projects-left-column">
+                        <!-- Column 1: CVE Discoveries -->
+                        <div class="skill-category">
+                            <h3 class="group-title">CVE Discoveries</h3>
+                            <div class="grid-layout">
+                                <div class="card" style="cursor: pointer;" onclick="window.open('https://www.cve.org/CVERecord?id=CVE-2025-61255', '_blank', 'noopener,noreferrer')">
+                                    <h3>CVE-2025-61255</h3>
+                                    <p>An XSS vulnerability I discovered in the Bank Locker Management System by PHPGurukul.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Column 3: Security Projects -->
+                        <div class="skill-category">
+                            <h3 class="group-title">Security Projects</h3>
+                            <div class="grid-layout">
+                                <div class="card">
+                                    <h3>Coming Soon</h3>
+                                    <p>New tools, scripts, and other projects will be added here.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column 2: CTF Participation -->
+                    <div class="skill-category">
+                        <h3 class="group-title">CTF Participation</h3>
+                        <div class="grid-layout">
+                            <div class="card" style="cursor: pointer;" onclick="window.open('assets/certificates/CryptoNiteCTF.jpg', '_blank', 'noopener,noreferrer')">
+                                <i class="fas fa-award project-card-icon"></i>
+                                <h3>NiteCTF 2025</h3>
+                                <p>Participated in the national level CTF organized by MIT Manipal.</p>
+                            </div>
+                            <div class="card" style="cursor: pointer;" onclick="window.open('assets/certificates/OffSec Diary CTF.png', '_blank', 'noopener,noreferrer')">
+                                <i class="fas fa-award project-card-icon"></i>
+                                <h3>OFSD CTF</h3>
+                                <p>Competed in the OFSD Open Offensive CTF 2025.</p>
+                            </div>
+                            <div class="card" style="cursor: pointer;" onclick="window.open('assets/certificates/MetaCTF_December_2025_Flash_CTF_Certificate.pdf', '_blank', 'noopener,noreferrer')">
+                                <i class="fas fa-award project-card-icon"></i>
+                                <h3>MetaCTF Flash CTF</h3>
+                                <p>Participated in the MetaCTF Flash CTF in December 2025.</p>
+                            </div>
+                            <div class="card" style="cursor: pointer;" onclick="window.open('assets/certificates/Razzify Chaitanya CTF.pdf', '_blank', 'noopener,noreferrer')">
+                                <i class="fas fa-award project-card-icon"></i>
+                                <h3>Chaitanya CTF</h3>
+                                <p>Participated in the Chaitanya CTF organized by Himachal Pradesh Technical University, supported by Razzify.</p>
+                            </div>
+                            <div class="card">
+                                <h3>SHAZ CTF 2025</h3>
+                                <p>Participated in SHAZ CTF 2025.</p>
+                            </div>
+                            <div class="card">
+                                <h3>TSG CTF 2025</h3>
+                                <p>Participated in TSG CTF 2025 organized by Theoretical Science Group.</p>
+                            </div>
+                            <div class="card">
+                                <h3>CTF7</h3>
+                                <p>Member of the Hackers Family CTF team on CTF7.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="certifications-section">
+            <div class="container">
+                <h2 class="section-title">Certifications</h2>
+                <div id="certifications-grid" class="grid-layout">
+                    <div class="card">
+                        <div class="card-content-wrapper">
+                            <img src="assets/images/certs/AICWSA.png" alt="AICWSA - Windows Server Administrator Certification" class="cert-logo">
+                            <h3>AICWSA</h3>
+                            <p class="cert-full-name">Windows Server Administrator</p>
+                            <a href="https://certs.armourinfosec.com/aicwsa/nikhil-patidar/" class="btn-secondary" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content-wrapper">
+                            <img src="assets/images/certs/AICLSA.png" alt="AICLSA - Linux Server Administrator Certification" class="cert-logo">
+                            <h3>AICLSA</h3>
+                            <p class="cert-full-name">Linux Server Administrator</p>
+                            <a href="https://certs.armourinfosec.com/aiclsa/nikhil-patidar/" class="btn-secondary" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content-wrapper">
+                            <img src="assets/images/certs/AICWSE.png" alt="AICWSE - WordPress Security Expert Certification" class="cert-logo">
+                            <h3>AICWSE</h3>
+                            <p class="cert-full-name">WordPress Security Expert</p>
+                            <a href="https://certs.armourinfosec.com/aicwse/nikhil-patidar/" class="btn-secondary" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content-wrapper">
+                            <img src="assets/images/certs/CRTOM.png" alt="CRTOM - Red Team Operations Certification" class="cert-logo">
+                            <h3>CRTOM</h3>
+                            <p class="cert-full-name">Red Team Operations</p>
+                            <a href="https://courses.redteamleaders.com/exam-completion/84d245885d53121c" class="btn-secondary" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content-wrapper">
+                            <img src="assets/images/certs/CWAPT.png" alt="CWAPT - Website Penetration Testing Certification" class="cert-logo">
+                            <h3>CWAPT</h3>
+                            <p class="cert-full-name">Website Penetration Testing</p>
+                            <a href="https://www.udemy.com/certificate/UC-3b3d952f-94c3-4e25-8e32-2c1af63ee7aa/" class="btn-secondary" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content-wrapper">
+                            <img src="assets/images/certs/CPPS.png" alt="CPPS - Phishing Prevention Specialist Certification" class="cert-logo">
+                            <h3>CPPS</h3>
+                            <p class="cert-full-name">Phishing Prevention Specialist</p>
+                            <a href="https://academy.hackandfix.com/certificate-page/?user=3599&course=53700" class="btn-secondary" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 class="section-title">Contact Me</h2>
+                <div class="contact-grid">
+                    <!-- Left Column: Contact Details -->
+                    <div class="contact-details-card">
+                        <div class="contact-details-content">
+                            <h3>Contact Information</h3>
+                            <p>Have a question or want to work together? Feel free to reach out.</p>
+                            <ul>
+                                <li><i class="fas fa-envelope"></i> <a href="mailto:nikhilpatidar132@gmail.com">nikhilpatidar132@gmail.com</a></li>
+                                <li><i class="fas fa-phone"></i> +91 7489306252</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Right Column: Contact Form -->
+                    <div class="contact-form-card">
+                        <form id="contact-form" action="https://formspree.io/f/meeogbnn" method="POST">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                            <input type="email" name="email" placeholder="Your Email" required>
+                            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                            
+                            <!-- Honeypot field for spam protection -->
+                            <input type="text" name="_gotcha" style="display:none">
+                            
+                            <div class="form-button-wrapper">
+                                <button type="submit" class="btn-primary">
+                                    <span class="btn-text">Send Message</span>
+                                </button>
+                            </div>
+                        </form>
+                        <div id="form-status" style="margin-top: 1rem;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-bottom-bar">
+            <p class="footer-copyright">&copy; 2026 Nikhil Patidar. All Rights Reserved.</p>
+            <p class="footer-tagline">Securing the Web Through Ethical Hacking.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const options = {
+                strings: ['Penetration Tester | Cybersecurity | Ethical Hacking'],
+                typeSpeed: 50,
+                backSpeed: 50,
+                backDelay: 1500,
+                startDelay: 500,
+                loop: true,
+                showCursor: false,
+                cursorChar: '|',
+            };
+
+            const typed = new Typed('.hero-title', options);
+        });
+    </script>
+    <script src="assets/js/main.js"></script>
+
+    <script>
+        // Helper function for HTML escaping
+        function escapeHTML(str) {
+            var div = document.createElement('div');
+            div.appendChild(document.createTextNode(str));
+            return div.innerHTML;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.classList.remove('no-fouc');
+
+            const form = document.getElementById('contact-form');
+            const statusDiv = document.getElementById('form-status');
+            const submitButton = form.querySelector('button[type="submit"]');
+            const buttonText = submitButton.querySelector('.btn-text');
+
+            async function handleSubmit(event) {
+                event.preventDefault();
+                
+                // Clear previous messages and reset button state
+                statusDiv.innerHTML = "";
+                statusDiv.style.color = '';
+                submitButton.disabled = true;
+                submitButton.classList.add('is-loading');
+                buttonText.textContent = 'Sending…';
+
+                const formElements = event.target.elements;
+
+                const nameInput = formElements.name;
+                const emailInput = formElements.email;
+                const messageInput = formElements.message;
+                
+                // --- XSS and Validation Checks ---
+                if (/[<>]/g.test(nameInput.value)) {
+                    statusDiv.innerHTML = "Please enter a valid name without HTML characters.";
+                    statusDiv.style.color = 'red';
+                    submitButton.disabled = false;
+                    submitButton.classList.remove('is-loading');
+                    buttonText.textContent = 'Send Message';
+                    return;
+                }
+
+                if (!/\S+@\S+\.\S+/.test(emailInput.value)) {
+                    statusDiv.innerHTML = "Please enter a valid email address.";
+                    statusDiv.style.color = 'red';
+                    submitButton.disabled = false;
+                    submitButton.classList.remove('is-loading');
+                    buttonText.textContent = 'Send Message';
+                    return;
+                }
+
+                if (/[<>]/g.test(messageInput.value)) {
+                    statusDiv.innerHTML = "Please do not include HTML characters in the message.";
+                    statusDiv.style.color = 'red';
+                    submitButton.disabled = false;
+                    submitButton.classList.remove('is-loading');
+                    buttonText.textContent = 'Send Message';
+                    return;
+                }
+
+                // --- Input Sanitization (as a fallback) ---
+                const sanitizedName = escapeHTML(nameInput.value);
+                const sanitizedMessage = escapeHTML(messageInput.value);
+
+                // Create FormData manually to add sanitized values
+                const formDataToSend = new FormData();
+                formDataToSend.append('name', sanitizedName);
+                formDataToSend.append('email', emailInput.value);
+                formDataToSend.append('message', sanitizedMessage);
+                formDataToSend.append('submission_date', new Date().toUTCString());
+                
+                if (formElements._gotcha) {
+                    formDataToSend.append('_gotcha', formElements._gotcha.value);
+                }
+                
+                fetch(event.target.action, {
+                    method: form.method,
+                    body: formDataToSend,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                }).then(response => {
+                    submitButton.classList.remove('is-loading');
+                    if (response.ok) {
+                        statusDiv.innerHTML = ""; // Clear old errors
+                        submitButton.classList.add('is-success');
+                        buttonText.textContent = 'Sent ✓';
+                        form.reset();
+                        setTimeout(() => {
+                            submitButton.disabled = false;
+                            submitButton.classList.remove('is-success');
+                            buttonText.textContent = 'Send Message';
+                        }, 2000);
+                    } else {
+                        response.json().then(data => {
+                            if (Object.hasOwn(data, 'errors')) {
+                                statusDiv.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+                            } else {
+                                statusDiv.innerHTML = "Oops! There was a problem submitting your form";
+                            }
+                            statusDiv.style.color = 'red';
+                        });
+                        submitButton.disabled = false;
+                        buttonText.textContent = 'Send Message';
+                    }
+                }).catch(error => {
+                    submitButton.classList.remove('is-loading');
+                    statusDiv.innerHTML = "Oops! There was a problem submitting your form";
+                    statusDiv.style.color = 'red';
+                    submitButton.disabled = false;
+                    buttonText.textContent = 'Send Message';
+                });
+            }
+
+            form.addEventListener("submit", handleSubmit);
+        });
+    </script>
+</body>
+</html>

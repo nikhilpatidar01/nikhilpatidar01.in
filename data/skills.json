@@ -1,0 +1,21 @@
+{
+    "web_security": [
+        "SQL Injection (Basic)",
+        "XSS",
+        "File Upload Vulnerabilities"
+    ],
+    "penetration_testing": [
+        "Reconnaissance",
+        "Exploitation",
+        "Reporting"
+    ],
+    "operating_systems": [
+        "Linux",
+        "Windows"
+    ],
+    "networking": [
+        "Ports",
+        "Services",
+        "Traffic Analysis"
+    ]
+}
