@@ -34,4 +34,4 @@ This repository contains the source code for my personal portfolio website, host
 * **GitHub:** [@nikhilpatidar01](https://github.com/nikhilpatidar01)
 
 ---
-*© 2025 Nikhil Patidar. All Rights Reserved.*
+*© 2026 Nikhil Patidar. All Rights Reserved.*
