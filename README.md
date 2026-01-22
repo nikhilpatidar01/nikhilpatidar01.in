@@ -1,6 +1,10 @@
-# 🌐 nikhilpatidar01.in - Personal Portfolio
+# 🌐 [nikhilpatidar01.in](https://nikhilpatidar01.in/) - Personal Portfolio
 
+---
 
+https://github.com/user-attachments/assets/767f0d60-6f67-47b4-ba97-eb680ad6e337
+
+---
 
 This repository contains the source code for my personal portfolio website, hosted live at **[nikhilpatidar01.in](https://nikhilpatidar01.in)**.
 
@@ -20,8 +24,8 @@ This repository contains the source code for my personal portfolio website, host
 
 ## 🛠️ Tech Stack
 
-* **Frontend:** HTML5, CSS3, JavaScript
-* **Hosting:** GitHub Pages / Vercel / Netlify *(Jo bhi aap use kar rahe hain)*
+* **Frontend:** HTML, CSS, JavaScript
+* **Hosting:** GitHub Pages 
 
 ## 🔗 Connect with Me
 
