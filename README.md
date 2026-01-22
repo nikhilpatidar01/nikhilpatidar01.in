@@ -1,7 +1,6 @@
 # 🌐 nikhilpatidar01.in - Personal Portfolio
 
-![Portfolio Preview](https://nikhilpatidar01.in/assets/preview.png)
-*(Note: Yahan aap apni website ka screenshot ya banner add kar sakte hain)*
+
 
 This repository contains the source code for my personal portfolio website, hosted live at **[nikhilpatidar01.in](https://nikhilpatidar01.in)**.
 
