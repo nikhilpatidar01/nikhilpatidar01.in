@@ -130,6 +130,8 @@
                 // Set specific duration based on the target value
                 if (target === 1) {
                     duration = 1000; // 1 second
+                } else if (target === 3) { // New condition for 3+ Bounty Rewards
+                    duration = 2000; // 2 seconds (double the speed of default 4 seconds)
                 } else if (target === 10) {
                     duration = 3000; // 3 seconds
                 } else if (target === 300) {
@@ -288,5 +290,53 @@
     window.addEventListener('scroll', highlightActiveSection);
     // Run initially
     highlightActiveSection();
+
+    // Custom JS for the cyber-send-btn
+    const form = document.querySelector("#contact-form"); // Use #contact-form ID
+    const btn = document.getElementById("cyberSendBtn");
+
+    // Ensure elements exist before adding listeners
+    if (form && btn) {
+        const text = btn.querySelector(".btn-text");
+        const loader = btn.querySelector(".btn-loader");
+
+        form.addEventListener("submit", (e) => {
+            // Prevent default form submission handled by the inline script
+            // The existing inline script already handles preventDefault and the fetch logic.
+            // This script should *enhance* the existing button, not replace its core function.
+            // Let the existing handleSubmit function run, but visually update the button.
+
+            // Reset button state just in case
+            loader.style.opacity = "0";
+            text.innerText = "Send Message";
+            text.style.opacity = "1";
+            btn.style.borderColor = "#00e0ff";
+            btn.style.color = "#00e0ff";
+            btn.style.boxShadow = "0 0 10px rgba(0,224,255,0.3)";
+
+            // Show loader
+            text.style.opacity = "0";
+            loader.style.opacity = "1";
+
+            // The original form submission logic (the fetch in index.html) will still run.
+            // The timings here need to be adjusted or coordinated with the actual form submission success/failure.
+            // For now, these are just visual cues.
+            setTimeout(() => {
+                loader.style.opacity = "0";
+                text.innerText = "Message Sent ✓"; // Visually show success
+                text.style.opacity = "1";
+                btn.style.borderColor = "#00ff9d"; // Green border for success
+                btn.style.color = "#00ff9d";
+                btn.style.boxShadow = "0 0 20px rgba(0,255,157,0.6)";
+            }, 1500); // Simulate a delay for sending
+
+            setTimeout(() => {
+                text.innerText = "Send Message"; // Reset button text
+                btn.style.borderColor = "#00e0ff"; // Reset border color
+                btn.style.color = "#00e0ff";
+                btn.style.boxShadow = "0 0 10px rgba(0,224,255,0.3)";
+            }, 4000); // Reset after a longer delay
+        });
+    }
 
 });

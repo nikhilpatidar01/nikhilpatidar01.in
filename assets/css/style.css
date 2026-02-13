@@ -1,30 +1,34 @@
 /* Global Styles */
 :root {
-    --primary-color: #007bff; /* Blue */
-    --secondary-color: #6c757d; /* Gray */
-    --accent-color: #28a745; /* Green */
-    --dark-bg: #1a1a2e; /* Dark Blue-Purple */
+    /* New Professional Color Palette */
+    --primary-heading: #4FD1FF;      /* Soft cyan for main headings */
+    --secondary-heading: #38BDF8;    /* Muted blue for sub-headings */
+    --body-text: #C9D1D9;            /* Light gray for paragraphs */
+    --muted-text: #9CA3AF;           /* Softer gray for sub-text */
+    --accent: #00C3FF;               /* Accent color for buttons and highlights */
+
+    /* Map old variables to new ones for compatibility */
+    --primary-color: var(--accent);
+    --secondary-color: #6c757d;
+    --accent-color: var(--accent);
+    --text-color: var(--body-text);
+    
+    /* Retain structural and background variables */
+    --dark-bg: #1a1a2e;
     --dark-bg-light: #2e3b55;
-    --text-color: #e0e0e0; /* Light Gray */
-    --heading-color: #ffffff; /* White */
     --card-bg: #2a2a3e;
     --border-color: #444455;
     --hover-color: #0056b3;
     --shadow-color: rgba(0, 0, 0, 0.3);
-    --font-family-sans: 'Roboto', sans-serif;
-    --font-family-mono: 'Fira Code', monospace;
+    --font-family-sans: 'Inter', sans-serif;
+    --font-family-mono: 'Poppins', sans-serif;
 
-    /* New variables for Skills card styling */
-    --color-card: 42, 42, 62; /* RGB values from --card-bg */
-    --translateZ: 100px; /* For 3D transform on hover */
+    --color-card: 42, 42, 62; /* RGB for skills card */
+    --translateZ: 100px;
 
-    /* Section Backgrounds (Alternating - Premium Cyber) */
-    
-    /* Gradient A: Deep Blue -> Cyan Glow -> Soft Purple Hint */
+    /* Section Backgrounds */
     --bg-gradient-a: radial-gradient(circle at 50% 0%, rgba(0, 212, 255, 0.15) 0%, rgba(26, 26, 46, 0) 50%),
                      linear-gradient(180deg, #0b0c15 0%, #131325 50%, #0b0c15 100%);
-                     
-    /* Gradient B: Dark Purple Tone -> Navy -> Soft Blue Glow */
     --bg-gradient-b: radial-gradient(circle at 50% 100%, rgba(120, 50, 255, 0.08) 0%, rgba(15, 16, 22, 0) 50%),
                      linear-gradient(180deg, #06060a 0%, #0d0e14 100%);
 }
@@ -50,7 +54,7 @@ body.no-fouc {
 }
 
 body {
-    font-family: var(--font-family-sans);
+    font-family: 'Inter', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--dark-bg);
@@ -75,13 +79,32 @@ ul {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: var(--heading-color);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
     line-height: 1.2;
     margin-bottom: 0.5em;
 }
 
+h1, .hero-name, h2, .section-title {
+    color: var(--primary-heading);
+}
+
+h3, h4, h5, h6 {
+    color: var(--secondary-heading);
+}
+
+h1:hover, h2:hover, .section-title:hover, .hero-name:hover {
+  text-shadow: 0 0 8px rgba(79, 209, 255, 0.6); /* --primary-heading at 60% opacity */
+}
+
 p {
     margin-bottom: 1em;
+    color: var(--body-text);
+}
+
+.section-subtitle,
+.footer-tagline {
+  color: var(--muted-text);
 }
 
 img {
@@ -100,7 +123,7 @@ img {
 .section-title {
     font-size: 2.5rem;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 25px; /* Reduced gap between heading and content */
     position: relative;
     padding-bottom: 0.5em;
 }
@@ -129,38 +152,58 @@ img {
     border: 0;
 }
 
-.btn-primary, .btn-secondary {
-    display: inline-block;
-    padding: 0.8rem 1.8rem;
-    border-radius: 5px;
-    font-weight: bold;
-    text-align: center;
-    transition: all 0.3s ease;
-    border: none;
+.btn-primary, .btn-secondary, .resume-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 22px;
+    height: auto;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    transition: 0.3s ease;
+    border: 2px solid var(--primary-color);
     cursor: pointer;
 }
 
 .btn-primary {
     background-color: var(--primary-color);
-    color: var(--heading-color);
+    color: #0b0f1a;
 }
 
 .btn-primary:hover {
-    background-color: var(--hover-color);
-    transform: translateY(-2px);
-}
-
-.btn-secondary {
     background-color: transparent;
     color: var(--primary-color);
-    border: 2px solid var(--primary-color);
 }
 
-.btn-secondary:hover {
-    background-color: var(--primary-color);
-    color: var(--heading-color);
-    transform: translateY(-2px);
+.btn-secondary, .resume-btn {
+    background-color: transparent;
+    color: var(--primary-color);
 }
+
+.btn-secondary:hover, .resume-btn:hover {
+    background-color: var(--primary-color);
+    color: #0b0f1a;
+}
+
+.ctf-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.ctf-card img {
+    height: 150px; /* Standardize height for all images in ctf-card */
+    object-fit: contain; /* Ensure the entire image is visible */
+    margin-bottom: 1rem; /* Existing margin */
+}
+
+
+
+
+
 
 .grid-layout {
     display: grid;
@@ -170,20 +213,19 @@ img {
 
 .card {
     background-color: rgba(42, 42, 62, 0.6); /* Slightly transparent for glassmorphism */
-    border-radius: 8px;
+    border-radius: 12px;
     padding: 1.5rem;
     box-shadow: 0 5px 15px var(--shadow-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     border: 1px solid rgba(68, 68, 85, 0.4); /* Subtle transparent border */
     backdrop-filter: blur(10px); /* Glassmorphism blur effect */
+    overflow: hidden;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.4); /* Enhanced shadow on hover */
     background-color: rgba(42, 42, 62, 0.8); /* Slightly less transparent on hover */
 }
 
@@ -215,9 +257,9 @@ img {
     background-color: rgba(46, 59, 85, 0.8); /* Slightly less transparent on hover */
 }
 
-/* =========================================
+/* ==========================================
    NEW HEADER & NAVIGATION STYLES
-   ========================================= */
+   ========================================== */
 
 header#main-header {
     position: fixed;
@@ -242,18 +284,19 @@ header#main-header {
 
 /* Logo */
 .logo {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 1.6rem;
     font-weight: 700;
-    color: #00d4ff; /* Cyan */
+    color: var(--primary-heading);
     text-decoration: none;
     letter-spacing: -0.5px;
-    transition: transform 0.3s ease, text-shadow 0.3s ease;
+    transition: transform 0.3s ease; /* text-shadow removed */
 }
 
 .logo:hover {
-    transform: scale(1.05);
-    text-shadow: 0 0 20px rgba(0, 212, 255, 0.6);
+    color: var(--accent); /* Apply accent color on hover */
+    transform: translateY(-2px); /* Subtle lift */
+    /* text-shadow removed */
 }
 
 /* Desktop Menu */
@@ -270,7 +313,7 @@ header#main-header {
 }
 
 .nav-link {
-    font-family: 'Sora', sans-serif; /* Modern Tech Font */
+    font-family: 'Poppins', sans-serif;
     color: var(--text-color);
     font-size: 0.95rem;
     font-weight: 500;
@@ -284,8 +327,8 @@ header#main-header {
 
 .nav-link:hover,
 .nav-link.active {
-    color: #00d4ff;
-    text-shadow: 0 0 12px rgba(0, 212, 255, 0.5);
+    color: var(--accent);
+    text-shadow: none; /* Remove default glow */
     transform: translateY(-2px); /* Slight move up */
 }
 
@@ -310,7 +353,7 @@ header#main-header {
 
 /* Hamburger Menu (Mobile) */
 .hamburger-menu {
-    display: none;
+    display: flex; /* Changed from none */
     flex-direction: column;
     gap: 6px;
     cursor: pointer;
@@ -321,7 +364,7 @@ header#main-header {
     display: block;
     width: 25px;
     height: 3px;
-    background-color: var(--heading-color);
+    background-color: #ffffff; /* Set a visible color */
     border-radius: 3px;
     transition: all 0.3s ease;
 }
@@ -406,7 +449,7 @@ header#main-header {
 }
 
 .mobile-nav-link {
-    font-family: 'Sora', sans-serif; /* Modern Tech Font */
+    font-family: 'Poppins', sans-serif;
     color: rgba(255, 255, 255, 0.85);
     font-size: 1.3rem; /* Slightly larger */
     font-weight: 600;
@@ -451,9 +494,6 @@ header#main-header {
         display: none;
     }
 
-    .hamburger-menu {
-        display: flex;
-    }
 }
 
 /* Hero Section */
@@ -509,6 +549,10 @@ section {
     padding: 6rem 0; /* Consistent spacing */
 }
 
+.about-section {
+    padding: 70px 0;
+}
+
 .hero .container {
     position: relative;
     z-index: 1;
@@ -538,6 +582,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: transform 0.4s ease;
 }
 
 /* This div creates the blurred, rotating gradient background (the "halo") */
@@ -558,6 +603,7 @@ section {
     /* Animation for the rotating effect */
     animation: rotate 4s linear infinite;
     z-index: 1; /* Places the halo behind the photo */
+    transition: all 0.4s ease;
 }
 
 /* The actual profile image, creating a sharp inner edge for the halo */
@@ -598,11 +644,11 @@ section {
     font-size: 3.8rem;
     margin-bottom: 0.5rem;
     
-    font-family: 'Sora', var(--font-family-sans);
+    font-family: 'Poppins', sans-serif;
     font-weight: 700;
     letter-spacing: -0.04em;
     
-    color: #00BFFF; /* Solid cyan/blue base color */
+    /* Color is now handled by the generic h1, .hero-name rule */
 
     background: none;
     animation: none;
@@ -613,13 +659,7 @@ section {
     position: static;
     z-index: auto;
 
-    /* Apply text-shadow effects only to the font */
-    text-shadow:
-        /* Subtle inner glow / very soft cyan highlight */
-        0 0 4px rgba(0, 191, 255, 0.7), /* Focused cyan glow, no blur on letter edges */
-        
-        /* Light inner shadow (to give a slight 3D matte/glassy look) */
-        1px 1px 2px rgba(0, 0, 0, 0.2); /* Very subtle dark shadow */
+    /* Removed default text-shadow. Hover effect is handled by generic h1:hover rule. */
 }
 
 .hero-title {
@@ -627,6 +667,15 @@ section {
     color: #c0c0c0; /* Reduced brightness */
     margin-bottom: 1rem;
     display: inline-block; /* Required for the cursor */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.typing-wrapper {
+    min-height: 40px;
+    display: inline-block;
+    text-align: left;
 }
 
 .hero-title::after {
@@ -714,6 +763,16 @@ section {
     transform: translateZ(20px);
 }
 
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+
+
 
 /* About Section */
 .about-section .two-column-layout {
@@ -727,15 +786,11 @@ section {
 .about-section .hero-summary-column {
     background-color: var(--card-bg);
     padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px var(--shadow-color);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
     text-align: left; /* Align stats content to left */
-    transition: box-shadow 0.3s ease; /* Smooth transition for the hover effect */
-}
-
-.about-section .hero-summary-column:hover {
-    box-shadow: 0 0 20px rgba(0, 123, 255, 0.6), /* Soft blue neon glow */
-                0 0 30px rgba(0, 123, 255, 0.4); /* Wider, fainter blue glow */
+    transition: all 0.3s ease; /* Smooth transition for the hover effect */
+    overflow: hidden;
 }
 
 /* New rule for better paragraph readability */
@@ -746,12 +801,22 @@ section {
     margin-right: auto; /* that spans the full width. */
 }
 
+.about-text p {
+    margin-bottom: 18px;
+}
+
+.about-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 
 .cyber-stats-line {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem 2rem; /* Row gap, column gap */
+    gap: 0.5rem 1.5rem; /* Reduced row gap, column gap */
     margin-top: 2rem;
     font-family: var(--font-family-mono);
 }
@@ -764,12 +829,12 @@ section {
 }
 
 .cyber-stat-value {
-    font-size: 2.5rem;
+    font-size: 2rem; /* Reduced size */
     font-weight: bold;
 }
 
 .cyber-stat-text {
-    font-size: 0.9rem;
+    font-size: 0.8rem; /* Reduced size */
     color: var(--heading-color); /* Pure white for better visibility */
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -777,7 +842,8 @@ section {
 
 .cyber-neon-blue,
 .cyber-neon-green,
-.cyber-neon-gold { 
+.cyber-neon-gold,
+.cyber-neon-purple { 
     color: #00E5FF; /* Solid bright cyan for high contrast */
     text-shadow: none; /* Ensure no glow effect */
 }
@@ -876,31 +942,38 @@ section {
     margin-bottom: 1rem; /* Space before button */
 }
 
+.ctf-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    align-items: stretch;
+}
+
+
+
+
+
 /* Certifications Section */
 .certifications-section .card {
     text-align: center;
     padding: 2rem;
-    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
     transition: all 0.3s ease;
+    border-radius: 12px;
+    overflow: hidden;
 }
 
 .certifications-section .card-content-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.2rem; /* Increased from 0.8rem */
+    justify-content: center;
+    gap: 0.6rem; /* Halved spacing (1.2rem * 0.5) */
 }
 
 .certifications-section .cert-logo {
-    width: 56px;
-    height: 56px;
+    max-height: 90px;
     object-fit: contain;
-    margin-bottom: 0.5rem;
-}
-
-.certifications-section .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+    margin-bottom: 15px;
 }
 
 .certifications-section .card h3 {
@@ -908,7 +981,7 @@ section {
     font-size: 22px; /* 20-22px range */
     font-weight: 700; /* semi-bold to bold */
     letter-spacing: 0.8px; /* 0.5-1px range */
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.1rem; /* Halved spacing (0.2rem * 0.5) */
 }
 
 .certifications-section .cert-full-name {
@@ -920,52 +993,46 @@ section {
     flex-grow: 1; /* Pushes button to bottom */
 }
 
-.certifications-section .btn-secondary {
-    height: 44px;
-    padding: 0 26px;
-    font-size: 14px;
-    border-radius: 10px;
-    line-height: 40px; /* Vertically center text */
-}
 
-.certifications-section .btn-secondary:hover {
-    box-shadow: 0 0 15px rgba(0, 123, 255, 0.6);
-}
 
+#bug-bounty {
+    text-align: center;
+}
 
 /* Contact Section */
 .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
+    display: flex;
     gap: 2rem;
-    align-items: start;
+    align-items: stretch;
 }
 
 .contact-details-card,
 .contact-form-card {
     background-color: var(--card-bg);
     padding: 2.5rem;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 123, 255, 0.2);
+    border-radius: 12px;
     border: 1px solid rgba(0, 123, 255, 0.3);
     transition: all 0.3s ease;
-}
-
-.contact-details-card:hover,
-.contact-form-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 30px rgba(0, 123, 255, 0.5);
+    overflow: hidden;
+    flex: 1; /* Allow cards to grow equally */
+    display: flex; /* Make cards flex containers */
+    flex-direction: column; /* Stack content vertically */
 }
 
 .contact-details-card h3 {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
     color: var(--primary-color);
+    text-align: center;
 }
 
 .contact-details-card ul {
     list-style: none;
     padding: 0;
+}
+
+.contact-details-card p {
+    margin-bottom: 15px;
 }
 
 .contact-details-card li {
@@ -979,6 +1046,12 @@ section {
 .contact-details-card li i {
     color: var(--primary-color);
     font-size: 1.5rem;
+}
+
+.contact-details-card .social-uiverse {
+    justify-content: center; /* Center the icons */
+    margin-top: auto;        /* Push the block to the bottom */
+    padding-top: 20px;      /* Add padding above icons */
 }
 
 .contact-section form {
@@ -1008,24 +1081,14 @@ section {
 .contact-section form textarea:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
+    box-shadow: 0 0 8px rgba(0, 200, 255, 0.4);
 }
 
-.contact-section form button {
-    align-self: flex-start;
-    width: auto;
-    padding: 0.8rem 2rem;
-    background: linear-gradient(90deg, #007bff, #00d4ff);
-    color: white;
-    font-weight: bold;
-    border-radius: 8px;
-    transition: all 0.3s ease;
+.contact-form-card {
+    justify-content: space-between;
 }
 
-.contact-section form button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0 20px rgba(0, 123, 255, 0.6);
-}
+
 
 
 /* Footer */
@@ -1046,6 +1109,9 @@ footer {
 
 /* Responsive Design */
 @media (min-width: 768px) {
+    .hamburger-menu {
+        display: none; /* Hide on desktop */
+    }
     .navbar {
         padding: 0 3rem;
     }
@@ -1086,6 +1152,14 @@ footer {
         flex-grow: 1; /* Allow it to take available space */
     }
 
+    .typing-wrapper {
+        width: 650px;
+    }
+
+    .hero-title {
+        white-space: nowrap;
+    }
+
     .hero-name {
         font-size: 5rem; /* Increased size */
     }
@@ -1095,8 +1169,14 @@ footer {
     }
 
     .about-section .two-column-layout {
-        grid-template-columns: 2fr 1fr; /* Text content on left, stats on right */
-        text-align: left;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .about-section .hero-summary-column {
+        width: 350px;
+        flex-shrink: 0;
     }
 
     .cyber-stats-line {
@@ -1110,6 +1190,10 @@ footer {
         gap: 1rem;
         justify-content: flex-start;
     }
+    .cyber-stat-value {
+        min-width: 80px; /* Adjusted for smaller font size */
+        text-align: left;  /* Align numbers to the left */
+    }
     .cyber-stat-separator {
         display: none; /* Hide separator on larger screens */
     }
@@ -1118,10 +1202,7 @@ footer {
         grid-template-columns: 1fr 1fr; /* Two columns for skills categories */
     }
 
-    .certifications-section .cert-logo {
-        width: 64px;
-        height: 64px;
-    }
+
 }
 
 @media (max-width: 1024px) {
@@ -1147,12 +1228,7 @@ footer {
     }
 }
 
-@media (min-width: 1024px) {
-    .certifications-section .cert-logo {
-        width: 80px;
-        height: 80px;
-    }
-}
+
 
 /* Styles for Core Skills Uiverse Carousel */
 #core-skills-carousel-container {
@@ -1214,7 +1290,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'JetBrains Mono', var(--font-family-mono);
+  font-family: 'Inter', sans-serif;
   font-weight: bold;
   padding: 0 5px;
   font-size: 11px;
@@ -1343,11 +1419,7 @@ footer {
     background-color: rgba(42, 42, 62, 0.6); /* Lighter background for inner cards */
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 123, 255, 0.2); /* Increased shadow for elevation and soft glow */
     transition: all 0.3s ease; /* Add transition for smooth hover effect */
-}
-
-.projects-section .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 20px rgba(0, 123, 255, 0.6), 0 0 30px rgba(0, 123, 255, 0.4);
+    margin-bottom: 18px;
 }
 
 .projects-section .card h3 {
@@ -1388,6 +1460,16 @@ footer {
     margin-bottom: 1.5rem;
 }
 
+#bug-bounty .grid-layout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    align-items: stretch;
+    max-width: 1100px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
 @media (max-width: 768px) {
     body {
         width: 100%;
@@ -1412,9 +1494,11 @@ footer {
 
     .about-section .two-column-layout,
     .skills-grid,
-    .projects-grid-container,
-    .contact-grid {
+    .projects-grid-container {
         grid-template-columns: 1fr;
+    }
+    .contact-grid {
+        flex-direction: column;
     }
     
     /* --- About Me Stats Alignment --- */
@@ -1433,10 +1517,82 @@ footer {
         padding: 1.5rem;
     }
 
+    .contact-details-card .social-uiverse {
+        gap: 1rem; /* Increase gap for better spacing */
+        margin-top: 2rem; /* Add some space on mobile too */
+    }
+
+    .contact-details-card .social-uiverse .parent {
+        width: 40px; /* Reduce icon size */
+        height: 40px; /* Reduce icon size */
+    }
+
     /* --- Contact Form Spacing --- */
     .contact-section form {
         gap: 1.5rem; /* Increased gap */
     }
+
+    .ctf-cards {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px;
+    }
+
+    .ctf-card {
+        padding: 18px;
+    }
+
+    .ctf-card img {
+        margin-bottom: 10px;
+    }
+
+    .ctf-card h3 {
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+
+    .ctf-card .btn-secondary { /* Targeted for precision */
+        margin-top: 8px;
+    }
+
+    .hero-identity-column {
+        align-items: center;
+    }
+
+    .typing-wrapper {
+        text-align: center;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+}
+
+/* Blog Section */
+.blog-section {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.blog-section .btn {
+    display: inline-block;
+    margin-top: 30px;
+}
+
+.section-subtitle {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    color: #9ca3af;
+    font-size: 15px;
+}
+
+.blog-preview {
+    max-width: 700px;
+    margin: 0 auto 20px auto;
+    font-size: 15px;
+    color: #d1d5db;
+    line-height: 1.7;
 }
 
 /* ================================= 
@@ -1460,7 +1616,7 @@ footer {
 .footer-copyright {
     margin: 0;
     font-size: 0.9rem;
-    color: var(--secondary-color);
+    color: #9fb3c8;
     line-height: 1.5;
 }
 
@@ -1468,7 +1624,8 @@ footer {
     margin: 0;
     margin-top: 0.5rem; /* Add spacing above tagline */
     font-size: 0.85rem;
-    color: var(--text-color);
+    color: #00e0ff;
+    opacity: 0.85;
     line-height: 1.5;
 }
 
@@ -1502,4 +1659,109 @@ footer {
     to {
         transform: rotate(360deg);
     }
+}
+
+@media (max-width: 768px) {
+  .ctf-card .btn-secondary {
+    font-size: 12px;
+    padding: 6px 10px;
+    white-space: nowrap;
+    display: inline-block;
+    width: auto;
+  }
+
+  
+}
+.ctf-card .btn-wrapper {
+margin-top: auto;
+display: flex;
+justify-content: center;
+}
+
+@media (max-width: 992px) {
+    #bug-bounty .grid-layout {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    #bug-bounty .grid-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Universal Card Hover Effect */
+.card:hover,
+.contact-details-card:hover,
+.contact-form-card:hover,
+.about-section .hero-summary-column:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 25px rgba(0, 170, 255, 0.4);
+}
+
+/* Responsive Button Styles */
+@media (max-width: 768px) {
+  .btn-primary, .btn-secondary, .resume-btn {
+    font-size: 14px;
+    gap: 8px;
+  }
+
+  .ctf-card .btn-secondary {
+    height: 36px; /* Smaller fixed height for this specific context */
+    font-size: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+
+  .ctf-card .btn-wrapper {
+    margin-top: 8px; /* Override margin-top: auto to reduce space */
+  }
+}
+
+/* New CSS for .cyber-send-btn */
+.cyber-send-btn {
+  position: relative;
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 40px;
+  background: rgba(10, 15, 25, 0.9);
+  border: 2px solid #00e0ff;
+  color: #00e0ff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,224,255,0.3);
+  width: auto;
+  display: inline-flex;
+  align-self: center;
+}
+
+.cyber-send-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(0,224,255,0.6);
+}
+
+.cyber-send-btn:active {
+  transform: scale(0.98);
+}
+
+.cyber-send-btn .btn-loader {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 2px solid transparent;
+  border-top: 2px solid #00e0ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  opacity: 0;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.profile-photo-wrapper:hover {
+  transform: scale(1.08);
 }
