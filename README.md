@@ -1,7 +1,7 @@
-# 🌐 [nikhilpatidar01.in](https://nikhilpatidar01.in/) - Personal Portfolio
+# 🌐 [nikhilpatidar01.in](https://nikhilpatidar01.in/) - My Portfolio
 
 ---
-
+  
 https://github.com/user-attachments/assets/767f0d60-6f67-47b4-ba97-eb680ad6e337
 
 ---
